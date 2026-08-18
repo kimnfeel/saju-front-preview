@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>보관함 · 착한사주</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <a class="brand" href="index.html">🐱 착한사주</a>
+      <span class="topright">
+        
+          <a href="index.html">로그아웃</a>
+        
+      </span>
+    </header>
+
+    <main class="wrap">
+      
+<section class="card"><div style="background:#fff4d6;border:1px solid #ecd9a0;border-radius:10px;padding:9px 12px;margin:10px 0;font-size:12.5px;color:#8a6d3b;text-align:center">🧪 프론트 <b>네비게이션 미리보기</b> · 샘플 데이터 · 해설 본문은 실제 서비스에서 생성</div>
+  <h1>보관함</h1>
+  <p class="sub">한 번 본 결과는 여기 저장돼요. 다시보기를 누르면 그대로 볼 수 있어요.</p>
+
+  <!-- 프로필 아바타 필터 -->
+  <div class="avatar-row">
+    <a href="profile-new.html" class="av"><span class="av-c av-add">＋</span>추가</a>
+    <a href="storage.html" class="av on"><span class="av-c av-all">ALL</span>전체</a>
+    
+    <a href="storage.html" class="av "><span class="av-c">정</span>정윤미</a>
+    
+    <a href="storage.html" class="av "><span class="av-c">김</span>김성필</a>
+    
+    <a href="profiles.html" class="av av-manage"><span class="av-c">✏</span>관리</a>
+  </div>
+
+  <!-- 상품 필터 칩 + 정렬 -->
+  <div class="chip-row">
+    <a class="fchip on" href="storage.html">전체</a>
+    
+    <a class="fchip " href="storage.html">사주해설</a>
+    
+    <a class="fchip " href="storage.html">대운해설</a>
+    
+    <a class="fchip " href="storage.html">연도별 운세</a>
+    
+    <a class="fchip " href="storage.html">일일운세</a>
+    
+    <a class="fsort" href="storage.html">↕ 최신순</a>
+  </div>
+
+  
+  <details class="arch-sec" open>
+    <summary class="arch-head">📜 사주해설 <span class="arch-cnt">2</span></summary>
+    
+      
+      <div class="arch-item">
+        <a class="ai-main" href="saju.html">
+          <span class="ai-ic">📜</span>
+          <span class="ai-body"><span class="ai-title">김성필</span><span class="ai-sub">새 사업 준비중이고 10월에 이사해요</span></span>
+          <span class="ai-badge">✓ 완료</span>
+        </a>
+        <button class="ai-share" title="공유" onclick="shareReading(19)">🔗</button>
+        <form method="post" action="#" onsubmit="return confirm('이 결과를 삭제할까요?')" data-target="#"><button class="ai-del" title="삭제">🗑</button></form>
+      </div>
+      
+      <div class="arch-item">
+        <a class="ai-main" href="saju.html">
+          <span class="ai-ic">📜</span>
+          <span class="ai-body"><span class="ai-title">김성필</span><span class="ai-sub">내 사주 원국 해설</span></span>
+          <span class="ai-badge">✓ 완료</span>
+        </a>
+        <button class="ai-share" title="공유" onclick="shareReading(13)">🔗</button>
+        <form method="post" action="#" onsubmit="return confirm('이 결과를 삭제할까요?')" data-target="#"><button class="ai-del" title="삭제">🗑</button></form>
+      </div>
+      
+    
+  </details>
+  
+  <details class="arch-sec" open>
+    <summary class="arch-head">🔮 대운해설 <span class="arch-cnt">1</span></summary>
+    
+      
+      <div class="arch-item">
+        <a class="ai-main" href="saju.html">
+          <span class="ai-ic">🔮</span>
+          <span class="ai-body"><span class="ai-title">김성필</span><span class="ai-sub">32세~41세</span></span>
+          <span class="ai-badge">✓ 완료</span>
+        </a>
+        <button class="ai-share" title="공유" onclick="shareReading(14)">🔗</button>
+        <form method="post" action="#" onsubmit="return confirm('이 결과를 삭제할까요?')" data-target="#"><button class="ai-del" title="삭제">🗑</button></form>
+      </div>
+      
+    
+  </details>
+  
+  <details class="arch-sec" open>
+    <summary class="arch-head">📅 연도별 운세 <span class="arch-cnt">2</span></summary>
+    
+      
+      <div class="arch-item">
+        <a class="ai-main" href="saju.html">
+          <span class="ai-ic">📅</span>
+          <span class="ai-body"><span class="ai-title">정윤미</span><span class="ai-sub">2026년</span></span>
+          <span class="ai-badge">✓ 완료</span>
+        </a>
+        <button class="ai-share" title="공유" onclick="shareReading(22)">🔗</button>
+        <form method="post" action="#" onsubmit="return confirm('이 결과를 삭제할까요?')" data-target="#"><button class="ai-del" title="삭제">🗑</button></form>
+      </div>
+      
+      <div class="arch-item">
+        <a class="ai-main" href="saju.html">
+          <span class="ai-ic">📅</span>
+          <span class="ai-body"><span class="ai-title">김성필</span><span class="ai-sub">2026년</span></span>
+          <span class="ai-badge">✓ 완료</span>
+        </a>
+        <button class="ai-share" title="공유" onclick="shareReading(15)">🔗</button>
+        <form method="post" action="#" onsubmit="return confirm('이 결과를 삭제할까요?')" data-target="#"><button class="ai-del" title="삭제">🗑</button></form>
+      </div>
+      
+    
+  </details>
+  
+  <details class="arch-sec" open>
+    <summary class="arch-head">🌤 일일운세 <span class="arch-cnt">4</span></summary>
+    
+      
+      <div class="arch-item">
+        <a class="ai-main" href="saju.html">
+          <span class="ai-ic">🌤</span>
+          <span class="ai-body"><span class="ai-title">정윤미</span><span class="ai-sub">2026년 8월 17일</span></span>
+          <span class="ai-badge">✓ 완료</span>
+        </a>
+        <button class="ai-share" title="공유" onclick="shareReading(21)">🔗</button>
+        <form method="post" action="#" onsubmit="return confirm('이 결과를 삭제할까요?')" data-target="#"><button class="ai-del" title="삭제">🗑</button></form>
+      </div>
+      
+      <div class="arch-item">
+        <a class="ai-main" href="saju.html">
+          <span class="ai-ic">🌤</span>
+          <span class="ai-body"><span class="ai-title">김성필</span><span class="ai-sub">2026년 8월 17일</span></span>
+          <span class="ai-badge">✓ 완료</span>
+        </a>
+        <button class="ai-share" title="공유" onclick="shareReading(20)">🔗</button>
+        <form method="post" action="#" onsubmit="return confirm('이 결과를 삭제할까요?')" data-target="#"><button class="ai-del" title="삭제">🗑</button></form>
+      </div>
+      
+      <div class="arch-item">
+        <a class="ai-main" href="saju.html">
+          <span class="ai-ic">🌤</span>
+          <span class="ai-body"><span class="ai-title">김성필</span><span class="ai-sub">2026년 8월 16일</span></span>
+          <span class="ai-badge">✓ 완료</span>
+        </a>
+        <button class="ai-share" title="공유" onclick="shareReading(18)">🔗</button>
+        <form method="post" action="#" onsubmit="return confirm('이 결과를 삭제할까요?')" data-target="#"><button class="ai-del" title="삭제">🗑</button></form>
+      </div>
+      
+      <div class="arch-item">
+        <a class="ai-main" href="saju.html">
+          <span class="ai-ic">🌤</span>
+          <span class="ai-body"><span class="ai-title">김성필</span><span class="ai-sub">2026년 8월 14일</span></span>
+          <span class="ai-badge">✓ 완료</span>
+        </a>
+        <button class="ai-share" title="공유" onclick="shareReading(7)">🔗</button>
+        <form method="post" action="#" onsubmit="return confirm('이 결과를 삭제할까요?')" data-target="#"><button class="ai-del" title="삭제">🗑</button></form>
+      </div>
+      
+    
+  </details>
+  
+</section>
+
+<script>
+function shareReading(id){
+  var url = location.origin + '/reading/' + id;
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(url).then(function(){ alert('링크를 복사했어요:\n' + url); },
+      function(){ prompt('아래 링크를 복사하세요', url); });
+  } else { prompt('아래 링크를 복사하세요', url); }
+}
+</script>
+
+    </main>
+
+    <nav class="tabbar">
+      <a href="index.html" class=""><span>🏠</span>홈</a>
+      <a href="profile-new.html" class=""><span>➕</span>사주추가</a>
+      <a href="pick-daily.html" class="center "><span>🐱</span>무료운세</a>
+      <a href="soon.html" class=""><span>💬</span>수다방</a>
+      <a href="storage.html" class="on"><span>📦</span>보관함</a>
+    </nav>
+  </div>
+<script>function showLoading(f){location.href=(f&&f.getAttribute("data-target"))||"#";return false;}document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll("form").forEach(function(f){f.addEventListener("submit",function(e){e.preventDefault();location.href=f.getAttribute("data-target")||"#";});});});</script></body>
+</html>

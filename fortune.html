@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>오늘의 운세 · 착한사주</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <a class="brand" href="index.html">🐱 착한사주</a>
+      <span class="topright">
+        
+          <a href="index.html">로그아웃</a>
+        
+      </span>
+    </header>
+
+    <main class="wrap">
+      
+<section class="card"><div style="background:#fff4d6;border:1px solid #ecd9a0;border-radius:10px;padding:9px 12px;margin:10px 0;font-size:12.5px;color:#8a6d3b;text-align:center">🧪 프론트 <b>네비게이션 미리보기</b> · 샘플 데이터 · 해설 본문은 실제 서비스에서 생성</div>
+  <div class="ftn-banner">🐱 오늘 하루의 기운을 정윤미님에게…</div>
+
+  <div class="prof-bar"><span>⭐ 대표프로필 · 정윤미 <b>배우자</b></span>
+    <a href="pick-daily.html">변경 ›</a></div>
+
+  <div class="ftn-title">정윤미님의 하루를 열어볼까요?</div>
+
+  <form method="post" action="daily.html" id="fortuneForm" onsubmit="return showLoading(this)" data-target="daily.html">
+    <input type="hidden" name="profile_id" value="13">
+
+    <!-- 애정운 상태 -->
+    <div class="q-block">
+      <div class="q-h">애정운 분석을 위해,<br>지금 정윤미님의 상황을 알려주세요.</div>
+      <div class="q-once">딱 1번만 입력하시면 돼요!</div>
+      <div class="chip-wrap">
+        <label class="qchip"><input type="radio" name="love_state" value="솔로" onchange="tc('love_state')"> 솔로</label><label class="qchip"><input type="radio" name="love_state" value="연애중" onchange="tc('love_state')"> 연애중</label><label class="qchip"><input type="radio" name="love_state" value="결혼함" onchange="tc('love_state')"> 결혼함</label><label class="qchip"><input type="radio" name="love_state" value="이혼 또는 이별" onchange="tc('love_state')"> 이혼 또는 이별</label>
+        <label class="qchip"><input type="radio" name="love_state" value="__custom" onchange="tc('love_state')"> 🖊 직접입력</label>
+      </div>
+      <input type="text" name="love_state_custom" id="love_state_custom" class="q-custom hidden" maxlength="30" placeholder="직접 입력">
+    </div>
+
+    <!-- 성공·재물운 상태 -->
+    <div class="q-block">
+      <div class="q-h">성공운과 재물운을 짚어보기 위해,<br>주로 어떤 일상을 보내고 계신가요?</div>
+      <div class="q-once">딱 1번만 입력하시면 돼요!</div>
+      <div class="chip-wrap">
+        <label class="qchip"><input type="radio" name="job_state" value="학생" onchange="tc('job_state')"> 학생</label><label class="qchip"><input type="radio" name="job_state" value="취업준비" onchange="tc('job_state')"> 취업준비</label><label class="qchip"><input type="radio" name="job_state" value="주부" onchange="tc('job_state')"> 주부</label><label class="qchip"><input type="radio" name="job_state" value="직장인" onchange="tc('job_state')"> 직장인</label><label class="qchip"><input type="radio" name="job_state" value="자영업/프리랜서" onchange="tc('job_state')"> 자영업/프리랜서</label><label class="qchip"><input type="radio" name="job_state" value="은퇴" onchange="tc('job_state')"> 은퇴</label>
+        <label class="qchip"><input type="radio" name="job_state" value="__custom" onchange="tc('job_state')"> 🖊 직접입력</label>
+      </div>
+      <input type="text" name="job_state_custom" id="job_state_custom" class="q-custom hidden" maxlength="30" placeholder="직접 입력">
+    </div>
+
+    <!-- 재미 퀴즈 1: 배터리 -->
+    <div class="q-block">
+      <div class="q-h">1. 지금 내 배터리 잔량은 어느 정도? 🔋</div>
+      <div class="battery-list">
+        <label class="qchip qchip-lg"><input type="radio" name="battery" value="아직 쌩쌩! 텐션 유지 중 ⚡" onchange="tc('battery')"> 아직 쌩쌩! 텐션 유지 중 ⚡</label><label class="qchip qchip-lg"><input type="radio" name="battery" value="당 떨어짐… 달달한 간식이 필요해 🍬" onchange="tc('battery')"> 당 떨어짐… 달달한 간식이 필요해 🍬</label><label class="qchip qchip-lg"><input type="radio" name="battery" value="영혼 가출 직전… 집에 가고 싶다 😩" onchange="tc('battery')"> 영혼 가출 직전… 집에 가고 싶다 😩</label>
+        <label class="qchip qchip-lg"><input type="radio" name="battery" value="__custom" onchange="tc('battery')"> 🖊 직접입력</label>
+      </div>
+      <input type="text" name="battery_custom" id="battery_custom" class="q-custom hidden" maxlength="40" placeholder="직접 입력">
+    </div>
+
+    <!-- 재미 퀴즈 2: 일정 -->
+    <div class="q-block">
+      <div class="q-h">2. 남은 하루 중 가장 기다려지는 것은?</div>
+      <div class="battery-list">
+        <label class="qchip qchip-lg"><input type="radio" name="schedule" value="자유 시간만 목 빠지게 기다리는 중 🏃" onchange="tc('schedule')"> 자유 시간만 목 빠지게 기다리는 중 🏃</label><label class="qchip qchip-lg"><input type="radio" name="schedule" value="저녁에 있는 신나는 약속 🍸" onchange="tc('schedule')"> 저녁에 있는 신나는 약속 🍸</label><label class="qchip qchip-lg"><input type="radio" name="schedule" value="집에 가서 넷플릭스 보며 힐링하기 🛁" onchange="tc('schedule')"> 집에 가서 넷플릭스 보며 힐링하기 🛁</label>
+        <label class="qchip qchip-lg"><input type="radio" name="schedule" value="__custom" onchange="tc('schedule')"> 🖊 직접입력</label>
+      </div>
+      <input type="text" name="schedule_custom" id="schedule_custom" class="q-custom hidden" maxlength="40" placeholder="직접 입력">
+    </div>
+
+    <!-- 재미 퀴즈 3: 소망 -->
+    <div class="q-block">
+      <div class="q-h">3. 남은 오후, 나에게 가장 필요한 운은?</div>
+      <div class="battery-list">
+        <label class="qchip qchip-lg"><input type="radio" name="wish" value="눈치 안 보고 스르륵 쉴 수 있는 타이밍 🧘" onchange="tc('wish')"> 눈치 안 보고 스르륵 쉴 수 있는 타이밍 🧘</label><label class="qchip qchip-lg"><input type="radio" name="wish" value="스트레스 날려줄 반가운 연락이나 소식 📱" onchange="tc('wish')"> 스트레스 날려줄 반가운 연락이나 소식 📱</label><label class="qchip qchip-lg"><input type="radio" name="wish" value="오늘 하루를 기분 좋게 마무리할 수 있는 여유 ☕" onchange="tc('wish')"> 오늘 하루를 기분 좋게 마무리할 수 있는 여유 ☕</label>
+        <label class="qchip qchip-lg"><input type="radio" name="wish" value="__custom" onchange="tc('wish')"> 🖊 직접입력</label>
+      </div>
+      <input type="text" name="wish_custom" id="wish_custom" class="q-custom hidden" maxlength="40" placeholder="직접 입력">
+    </div>
+
+    <button type="submit" class="cta">오늘의 운세 확인하기</button>
+    <button type="button" class="skip-link" onclick="showLoading(document.getElementById('fortuneForm'));">건너뛰고 바로 운세 보기</button>
+  </form>
+</section>
+
+<script>
+function tc(field){
+  var custom = document.querySelector('input[name='+field+'][value="__custom"]');
+  document.getElementById(field+'_custom').classList.toggle('hidden', !(custom && custom.checked));
+}
+</script>
+<div class="loading-overlay" id="loadingOverlay">
+  <div class="spinner"></div>
+  <div class="loading-msg">사주를 정성껏 풀어보는 중…</div>
+</div>
+<script>
+var MIN_LOADING_MS = 1200;
+function showLoading(form) {
+  document.getElementById('loadingOverlay').classList.add('show');
+  var started = Date.now();
+  var fd = new FormData(form);
+  var g = document.getElementById('gomin');
+  if (g && g.value.trim()) fd.append('gomin', g.value.trim());
+  fetch(form.action, { method: 'POST', body: fd })
+    .then(function (r) { return r.text(); })
+    .then(function (html) {
+      var wait = Math.max(0, MIN_LOADING_MS - (Date.now() - started));
+      setTimeout(function () { document.open(); document.write(html); document.close(); }, wait);
+    })
+    .catch(function () { form.submit(); });
+  return false;
+}
+</script>
+
+    </main>
+
+    <nav class="tabbar">
+      <a href="index.html" class=""><span>🏠</span>홈</a>
+      <a href="profile-new.html" class=""><span>➕</span>사주추가</a>
+      <a href="pick-daily.html" class="center "><span>🐱</span>무료운세</a>
+      <a href="soon.html" class=""><span>💬</span>수다방</a>
+      <a href="storage.html" class=""><span>📦</span>보관함</a>
+    </nav>
+  </div>
+<script>function showLoading(f){location.href=(f&&f.getAttribute("data-target"))||"#";return false;}document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll("form").forEach(function(f){f.addEventListener("submit",function(e){e.preventDefault();location.href=f.getAttribute("data-target")||"#";});});});</script></body>
+</html>

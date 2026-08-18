@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>회원가입 · 착한사주</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <a class="brand" href="index.html">🐱 착한사주</a>
+      <span class="topright">
+        
+          <a href="index.html">로그아웃</a>
+        
+      </span>
+    </header>
+
+    <main class="wrap">
+      
+<section class="card narrow">
+  <h1>회원가입</h1>
+  <p class="sub">이메일과 비밀번호로 간단히 시작해요.</p>
+  
+  <form method="post" action="signup.html" class="saju-form" data-target="#">
+    <label class="full">이메일<input type="email" name="email" value="" placeholder="you@example.com" required></label>
+    <label class="full">비밀번호<input type="password" name="password" placeholder="6자 이상" minlength="6" required></label>
+    <button type="submit" class="cta">가입하고 시작하기</button>
+  </form>
+  <p class="authlink">이미 계정이 있으세요? <a href="login.html">로그인</a></p>
+</section>
+
+    </main>
+
+    <nav class="tabbar">
+      <a href="index.html" class=""><span>🏠</span>홈</a>
+      <a href="profile-new.html" class=""><span>➕</span>사주추가</a>
+      <a href="pick-daily.html" class="center "><span>🐱</span>무료운세</a>
+      <a href="soon.html" class=""><span>💬</span>수다방</a>
+      <a href="storage.html" class=""><span>📦</span>보관함</a>
+    </nav>
+  </div>
+<script>function showLoading(f){location.href=(f&&f.getAttribute("data-target"))||"#";return false;}document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll("form").forEach(function(f){f.addEventListener("submit",function(e){e.preventDefault();location.href=f.getAttribute("data-target")||"#";});});});</script></body>
+</html>

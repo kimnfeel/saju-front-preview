@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>로그인 · 착한사주</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <a class="brand" href="index.html">🐱 착한사주</a>
+      <span class="topright">
+        
+          <a href="index.html">로그아웃</a>
+        
+      </span>
+    </header>
+
+    <main class="wrap">
+      
+<section class="card login-card">
+  
+  <div class="welcome-banner">🐱 착한사주에 오신 걸 환영합니다</div>
+  
+
+  <div class="providers">
+    <button class="prov kakao" onclick="soon()"><span class="pv-ic">💬</span>카카오로 시작하기<span class="pv-ar">→</span></button>
+    <button class="prov naver" onclick="soon()"><span class="pv-ic">N</span>네이버로 시작하기<span class="pv-ar">→</span></button>
+    <button class="prov google" onclick="soon()"><span class="pv-ic">G</span>구글로 시작하기<span class="pv-ar">→</span></button>
+    <a class="prov email" href="login.html"><span class="pv-ic">✉</span>이메일로 시작하기<span class="pv-ar">→</span></a>
+  </div>
+</section>
+<script>
+function soon(){ alert('소셜 로그인은 준비 중이에요. 지금은 이메일로 시작해 주세요!'); }
+</script>
+
+    </main>
+
+    <nav class="tabbar">
+      <a href="index.html" class=""><span>🏠</span>홈</a>
+      <a href="profile-new.html" class=""><span>➕</span>사주추가</a>
+      <a href="pick-daily.html" class="center "><span>🐱</span>무료운세</a>
+      <a href="soon.html" class=""><span>💬</span>수다방</a>
+      <a href="storage.html" class=""><span>📦</span>보관함</a>
+    </nav>
+  </div>
+<script>function showLoading(f){location.href=(f&&f.getAttribute("data-target"))||"#";return false;}document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll("form").forEach(function(f){f.addEventListener("submit",function(e){e.preventDefault();location.href=f.getAttribute("data-target")||"#";});});});</script></body>
+</html>

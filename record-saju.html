@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>김성필님의 990원 사주 기록</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <a class="brand" href="index.html">🐱 착한사주</a>
+      <span class="topright">
+        
+          <a href="index.html">로그아웃</a>
+        
+      </span>
+    </header>
+
+    <main class="wrap">
+      
+<section class="card"><div style="background:#fff4d6;border:1px solid #ecd9a0;border-radius:10px;padding:9px 12px;margin:10px 0;font-size:12.5px;color:#8a6d3b;text-align:center">🧪 프론트 <b>네비게이션 미리보기</b> · 샘플 데이터 · 해설 본문은 실제 서비스에서 생성</div>
+  <div class="rec-head">
+    <span class="pk-av">김</span>
+    <div>
+      <div class="rec-name">김성필님의 990원 사주 기록</div>
+      <div class="rec-sub">이전 기록을 다시 보거나, 새로 보실 수 있어요</div>
+    </div>
+  </div>
+
+  
+  <div class="rec-list">
+    
+    <a class="rec-item" href="saju.html">
+      <span class="ri-ic">📜</span>
+      <span class="ri-body"><span class="ri-title">새 사업 준비중이고 10월에 이사해요</span>
+        <span class="ri-date">2026-08-16</span></span>
+      <span class="pk-go">›</span>
+    </a>
+    
+    <a class="rec-item" href="saju.html">
+      <span class="ri-ic">📜</span>
+      <span class="ri-body"><span class="ri-title">내 사주 원국 해설</span>
+        <span class="ri-date">2026-08-16</span></span>
+      <span class="pk-go">›</span>
+    </a>
+    
+  </div>
+  
+
+  
+  <a class="cta" href="ask-saju.html">＋ 새 해설 보러가기</a>
+  
+  <a class="back-link" href="pick-saju.html">← 다른 사람 선택</a>
+</section>
+
+<div class="loading-overlay" id="loadingOverlay">
+  <div class="spinner"></div>
+  <div class="loading-msg">사주를 정성껏 풀어보는 중…</div>
+</div>
+<script>
+var MIN_LOADING_MS = 1200;
+function showLoading(form) {
+  document.getElementById('loadingOverlay').classList.add('show');
+  var started = Date.now();
+  var fd = new FormData(form);
+  var g = document.getElementById('gomin');
+  if (g && g.value.trim()) fd.append('gomin', g.value.trim());
+  fetch(form.action, { method: 'POST', body: fd })
+    .then(function (r) { return r.text(); })
+    .then(function (html) {
+      var wait = Math.max(0, MIN_LOADING_MS - (Date.now() - started));
+      setTimeout(function () { document.open(); document.write(html); document.close(); }, wait);
+    })
+    .catch(function () { form.submit(); });
+  return false;
+}
+</script>
+
+    </main>
+
+    <nav class="tabbar">
+      <a href="index.html" class=""><span>🏠</span>홈</a>
+      <a href="profile-new.html" class=""><span>➕</span>사주추가</a>
+      <a href="pick-daily.html" class="center "><span>🐱</span>무료운세</a>
+      <a href="soon.html" class=""><span>💬</span>수다방</a>
+      <a href="storage.html" class=""><span>📦</span>보관함</a>
+    </nav>
+  </div>
+<script>function showLoading(f){location.href=(f&&f.getAttribute("data-target"))||"#";return false;}document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll("form").forEach(function(f){f.addEventListener("submit",function(e){e.preventDefault();location.href=f.getAttribute("data-target")||"#";});});});</script></body>
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>프로필 관리 · 착한사주</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <a class="brand" href="index.html">🐱 착한사주</a>
+      <span class="topright">
+        
+          <a href="index.html">로그아웃</a>
+        
+      </span>
+    </header>
+
+    <main class="wrap">
+      
+<section class="card"><div style="background:#fff4d6;border:1px solid #ecd9a0;border-radius:10px;padding:9px 12px;margin:10px 0;font-size:12.5px;color:#8a6d3b;text-align:center">🧪 프론트 <b>네비게이션 미리보기</b> · 샘플 데이터 · 해설 본문은 실제 서비스에서 생성</div>
+  <h1>프로필 관리</h1>
+  <p class="sub">대표 지정·삭제를 할 수 있어요.</p>
+
+  
+  <div class="profile-list">
+    
+    <div class="profile-card is-rep">
+      <a class="pc-main" href="#">
+        <div class="pc-name">정윤미 <span class="pc-g">여</span>
+          <span class="rep-badge">⭐ 대표</span></div>
+        <div class="pc-birth">양력 1990.06.12 · 01:30</div>
+      </a>
+      <div class="pc-actions">
+        
+        <form method="post" action="#"
+              onsubmit="return confirm('이 사주를 삭제할까요?')" data-target="#"><button class="pc-del" title="삭제">✕</button></form>
+      </div>
+    </div>
+    
+    <div class="profile-card ">
+      <a class="pc-main" href="#">
+        <div class="pc-name">김성필 <span class="pc-g">남</span>
+          </div>
+        <div class="pc-birth">양력 1991.06.11 · 14:00</div>
+      </a>
+      <div class="pc-actions">
+        
+        <form method="post" action="#" data-target="#"><button class="pc-rep" title="대표로">⭐</button></form>
+        
+        <form method="post" action="#"
+              onsubmit="return confirm('이 사주를 삭제할까요?')" data-target="#"><button class="pc-del" title="삭제">✕</button></form>
+      </div>
+    </div>
+    
+  </div>
+  
+
+  <a class="cta" href="profile-new.html">＋ 사주 추가하기</a>
+  <a class="back-link" href="storage.html">← 보관함</a>
+</section>
+
+    </main>
+
+    <nav class="tabbar">
+      <a href="index.html" class=""><span>🏠</span>홈</a>
+      <a href="profile-new.html" class=""><span>➕</span>사주추가</a>
+      <a href="pick-daily.html" class="center "><span>🐱</span>무료운세</a>
+      <a href="soon.html" class=""><span>💬</span>수다방</a>
+      <a href="storage.html" class=""><span>📦</span>보관함</a>
+    </nav>
+  </div>
+<script>function showLoading(f){location.href=(f&&f.getAttribute("data-target"))||"#";return false;}document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll("form").forEach(function(f){f.addEventListener("submit",function(e){e.preventDefault();location.href=f.getAttribute("data-target")||"#";});});});</script></body>
+</html>

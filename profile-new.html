@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>새로운 사주 추가 · 착한사주</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <a class="brand" href="index.html">🐱 착한사주</a>
+      <span class="topright">
+        
+          <a href="index.html">로그아웃</a>
+        
+      </span>
+    </header>
+
+    <main class="wrap">
+      
+<section class="card"><div style="background:#fff4d6;border:1px solid #ecd9a0;border-radius:10px;padding:9px 12px;margin:10px 0;font-size:12.5px;color:#8a6d3b;text-align:center">🧪 프론트 <b>네비게이션 미리보기</b> · 샘플 데이터 · 해설 본문은 실제 서비스에서 생성</div>
+  <div class="add-head">새로운 사주 추가</div>
+  
+
+  <form action="profile-new.html" method="post" class="saju-form" id="addForm" data-target="profiles.html">
+    <!-- 이름 + 관계 (처음부터) -->
+    <div class="fld">
+      <div class="fld-top"><span class="qlabel">이름</span><span class="req" id="reqName">⊗ 필수</span></div>
+      <input type="text" name="nickname" id="f_nick" maxlength="20" autocomplete="off">
+    </div>
+    <div class="fld">
+      <div class="fld-top"><span class="qlabel">관계</span><span class="ok">✓</span></div>
+      <select name="relation" id="f_rel" onchange="relChange()">
+        <option value="본인">본인</option><option value="배우자">배우자</option><option value="연인">연인</option><option value="부모">부모</option><option value="자녀">자녀</option><option value="친구">친구</option>
+        <option value="__custom">직접 입력</option>
+      </select>
+      <input type="text" name="relation_custom" id="f_relc" placeholder="관계 직접 입력" class="hidden" maxlength="10">
+    </div>
+
+    <hr class="fdiv">
+
+    <!-- 달력 · 생년월일 · 성별 (이름 입력 후) -->
+    <div class="step hidden" id="grpB">
+      <div class="qlabel">달력 종류</div>
+      <div class="seg2">
+        <label class="chip"><input type="radio" name="calendar" value="양력" checked onclick="calChange()"> 양력</label>
+        <label class="chip"><input type="radio" name="calendar" value="음력" onclick="calChange()"> 음력</label>
+      </div>
+
+      <div class="hidden" id="grpLeap">
+        <div class="qlabel">평달/윤달</div>
+        <div class="seg2">
+          <label class="chip"><input type="radio" name="leap_radio" value="평달" checked> 평달</label>
+          <label class="chip"><input type="radio" name="leap_radio" value="윤달"> 윤달</label>
+        </div>
+      </div>
+
+      <div class="fld">
+        <div class="fld-top"><span class="qlabel">생년월일</span><span class="req" id="reqBd">⊗ 필수</span></div>
+        <input type="text" name="birthdate" id="f_bd" placeholder="YYYY-MM-DD" inputmode="numeric" maxlength="10" autocomplete="off">
+        <div class="err-msg hidden" id="bdErr">날짜 형식이 올바르지 않습니다.</div>
+      </div>
+
+      <div class="qlabel">성별</div>
+      <div class="seg2">
+        <label class="chip"><input type="radio" name="gender" value="여자" checked> 여자</label>
+        <label class="chip"><input type="radio" name="gender" value="남자"> 남자</label>
+      </div>
+    </div>
+
+    <!-- 태어난 시각 (생년월일 입력 후) -->
+    <div class="step hidden" id="grpC">
+      <hr class="fdiv">
+      <div class="fld-top"><span class="qlabel">태어난 시간을 아시나요?</span>
+        <span class="req" id="reqTime">⊗ 필수</span><span class="ok hidden" id="okTime">✓</span></div>
+      <div class="seg2">
+        <label class="chip"><input type="radio" name="know_time" value="예" checked onclick="timeFlow()"> 예</label>
+        <label class="chip"><input type="radio" name="know_time" value="아니오" onclick="timeFlow()"> 아니오</label>
+      </div>
+      <div class="know-no hidden" id="knowNo">✓ 시간 모름으로 저장됩니다</div>
+
+      <div class="hidden" id="grpExact">
+        <div class="qlabel">정확한 시간을 아시나요?</div>
+        <div class="seg2">
+          <label class="chip"><input type="radio" name="exact_time" value="예" checked onclick="timeFlow()"> 예</label>
+          <label class="chip"><input type="radio" name="exact_time" value="아니오" onclick="timeFlow()"> 아니오</label>
+        </div>
+
+        <input type="text" name="birthtime" id="f_time" placeholder="시간을 입력해주세요 (예: 14:30)" class="hidden" inputmode="numeric" maxlength="5">
+        <div class="siji-grid hidden" id="grpSiji">
+          
+          <label class="siji"><input type="radio" name="hour_branch" value="자"><span class="sj-n">자시</span><span class="sj-t">23:00 ~ 01:00</span></label>
+          
+          <label class="siji"><input type="radio" name="hour_branch" value="축"><span class="sj-n">축시</span><span class="sj-t">01:00 ~ 03:00</span></label>
+          
+          <label class="siji"><input type="radio" name="hour_branch" value="인"><span class="sj-n">인시</span><span class="sj-t">03:00 ~ 05:00</span></label>
+          
+          <label class="siji"><input type="radio" name="hour_branch" value="묘"><span class="sj-n">묘시</span><span class="sj-t">05:00 ~ 07:00</span></label>
+          
+          <label class="siji"><input type="radio" name="hour_branch" value="진"><span class="sj-n">진시</span><span class="sj-t">07:00 ~ 09:00</span></label>
+          
+          <label class="siji"><input type="radio" name="hour_branch" value="사"><span class="sj-n">사시</span><span class="sj-t">09:00 ~ 11:00</span></label>
+          
+          <label class="siji"><input type="radio" name="hour_branch" value="오"><span class="sj-n">오시</span><span class="sj-t">11:00 ~ 13:00</span></label>
+          
+          <label class="siji"><input type="radio" name="hour_branch" value="미"><span class="sj-n">미시</span><span class="sj-t">13:00 ~ 15:00</span></label>
+          
+          <label class="siji"><input type="radio" name="hour_branch" value="신"><span class="sj-n">신시</span><span class="sj-t">15:00 ~ 17:00</span></label>
+          
+          <label class="siji"><input type="radio" name="hour_branch" value="유"><span class="sj-n">유시</span><span class="sj-t">17:00 ~ 19:00</span></label>
+          
+          <label class="siji"><input type="radio" name="hour_branch" value="술"><span class="sj-n">술시</span><span class="sj-t">19:00 ~ 21:00</span></label>
+          
+          <label class="siji"><input type="radio" name="hour_branch" value="해"><span class="sj-n">해시</span><span class="sj-t">21:00 ~ 23:00</span></label>
+          
+        </div>
+        <p class="note" id="taeyang">※ 진태양시 −30분 자동 보정</p>
+      </div>
+    </div>
+
+    <div class="hidden" id="previewBox"></div>
+
+    <button type="submit" class="cta hidden" id="saveBtn">이 사주 저장하기</button>
+  </form>
+  <a class="back-link" href="storage.html">← 보관함</a>
+</section>
+
+<script>
+function show(id){ document.getElementById(id).classList.remove('hidden'); }
+function hide(id){ document.getElementById(id).classList.add('hidden'); }
+
+var nick=document.getElementById('f_nick');
+nick.addEventListener('input', function(){
+  document.getElementById('reqName').style.display = nick.value.trim() ? 'none' : '';
+  if(nick.value.trim()) show('grpB');
+});
+
+function relChange(){
+  var v=document.getElementById('f_rel').value;
+  document.getElementById('f_relc').classList.toggle('hidden', v!=='__custom');
+}
+function calChange(){
+  var m=document.querySelector('input[name=calendar]:checked').value;
+  document.getElementById('grpLeap').classList.toggle('hidden', m!=='음력');
+}
+
+// 생년월일 자동 하이픈 + 검증 → 시간 그룹 노출
+var bd=document.getElementById('f_bd');
+bd.addEventListener('input', function(){
+  var v=bd.value.replace(/[^0-9]/g,'').slice(0,8);
+  if(v.length>=5) v=v.slice(0,4)+'-'+v.slice(4,6)+(v.length>6?'-'+v.slice(6,8):'');
+  else if(v.length>=4) v=v.slice(0,4)+'-'+v.slice(4);
+  bd.value=v;
+  var ok=/^\d{4}-\d{2}-\d{2}$/.test(v);
+  document.getElementById('reqBd').style.display = v ? 'none' : '';
+  document.getElementById('bdErr').classList.toggle('hidden', !v || ok);
+  if(ok){ show('grpC'); timeFlow(); }   // 기본값(예/예)으로 정확한시간·시간입력 바로 노출
+});
+
+function timeFlow(){
+  var know=document.querySelector('input[name=know_time]:checked').value;
+  document.getElementById('grpExact').classList.toggle('hidden', know!=='예');
+  var exact=(document.querySelector('input[name=exact_time]:checked')||{}).value;
+  var isExact = (know==='예' && exact==='예');
+  var isBranch = (know==='예' && exact==='아니오');
+  document.getElementById('f_time').classList.toggle('hidden', !isExact);
+  document.getElementById('grpSiji').classList.toggle('hidden', !isBranch);
+  document.getElementById('taeyang').classList.toggle('hidden', !isExact);
+  document.getElementById('knowNo').classList.toggle('hidden', know!=='아니오');
+  _syncTimeMark();
+  show('saveBtn');
+  updatePreview();
+}
+
+// 태어난시간 ✓ 표시: 시각 정보가 실제로 완성됐을 때만(시:분 or 시지 or 모름)
+function _syncTimeMark(){
+  var done=_ready();
+  document.getElementById('reqTime').classList.toggle('hidden', done);
+  document.getElementById('okTime').classList.toggle('hidden', !done);
+}
+// ── 만세력 실시간 미리보기 (서버 계산) ──
+var _pt;
+function updatePreview(){ clearTimeout(_pt); _pt=setTimeout(_doPreview, 250); }
+function _ready(){
+  // 생년월일 + '태어난 시각' 정보가 완성됐을 때만 true
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(document.getElementById('f_bd').value)) return false;
+  var know=(document.querySelector('input[name=know_time]:checked')||{}).value;
+  if(know==='아니오') return true;                                   // 모름 → 삼주
+  var exact=(document.querySelector('input[name=exact_time]:checked')||{}).value;
+  if(know==='예' && exact==='예')  return /^\d{1,2}:\d{2}$/.test(document.getElementById('f_time').value.trim());  // 시:분 완성
+  if(know==='예' && exact==='아니오') return !!document.querySelector('input[name=hour_branch]:checked');            // 시지 선택
+  return false;
+}
+function _doPreview(){
+  var box=document.getElementById('previewBox');
+  if(!_ready()){ box.classList.add('hidden'); return; }   // 미완이면 미리보기 감춤
+  fetch('/preview', { method:'POST', body:new FormData(document.getElementById('addForm')) })
+    .then(function(r){ return r.status===204 ? '' : r.text(); })
+    .then(function(html){
+      if(html && html.trim()){ box.innerHTML=html; box.classList.remove('hidden'); }
+    }).catch(function(){});
+}
+// 시간 입력: 자동 콜론(1430→14:30) 후 미리보기 갱신
+var ftime=document.getElementById('f_time');
+ftime.addEventListener('input', function(){
+  var d=ftime.value.replace(/[^0-9]/g,'').slice(0,4);
+  ftime.value = d.length>=3 ? d.slice(0,2)+':'+d.slice(2) : d;
+  _syncTimeMark(); updatePreview();
+});
+document.querySelectorAll('input[name=hour_branch]').forEach(function(r){ r.addEventListener('change', function(){ _syncTimeMark(); updatePreview(); }); });
+document.querySelectorAll('input[name=calendar],input[name=leap_radio]').forEach(function(r){ r.addEventListener('change', updatePreview); });
+</script>
+
+    </main>
+
+    <nav class="tabbar">
+      <a href="index.html" class=""><span>🏠</span>홈</a>
+      <a href="profile-new.html" class="on"><span>➕</span>사주추가</a>
+      <a href="pick-daily.html" class="center "><span>🐱</span>무료운세</a>
+      <a href="soon.html" class=""><span>💬</span>수다방</a>
+      <a href="storage.html" class=""><span>📦</span>보관함</a>
+    </nav>
+  </div>
+<script>function showLoading(f){location.href=(f&&f.getAttribute("data-target"))||"#";return false;}document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll("form").forEach(function(f){f.addEventListener("submit",function(e){e.preventDefault();location.href=f.getAttribute("data-target")||"#";});});});</script></body>
+</html>
